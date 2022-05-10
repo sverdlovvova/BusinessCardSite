@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vladimir Sverdlov</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+</head>
+
+<body>
+    <div class="mid">
+        <div class="menu">
+            <ul>
+            <li><a href='/'>Главная</li>
+            <li><a href='/posts'>Посты</li>
+            <li><a href='/contacts'>Контакты</li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <a href='/posts/new_post'>
+                <button>Create new post</button>
+            </a>
+
+            <ul>
+                {% for post in posts_list %}            
+                    <div class="post">
+                        {{post}}
+                    </div>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
